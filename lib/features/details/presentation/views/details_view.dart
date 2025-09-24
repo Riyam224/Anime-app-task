@@ -2,9 +2,9 @@ import 'dart:ui';
 import 'package:clean_arch_task/core/theming/app_colors.dart';
 import 'package:clean_arch_task/core/theming/app_styles';
 import 'package:clean_arch_task/core/widgets/custom_button_with_icon.dart';
-import 'package:clean_arch_task/features/details/presentation/widgets/anime_views_info.dart';
-import 'package:clean_arch_task/features/details/presentation/widgets/genres_list.dart';
-import 'package:clean_arch_task/features/details/presentation/widgets/line.dart';
+import 'package:clean_arch_task/features/details/presentation/views/widgets/anime_views_info.dart';
+import 'package:clean_arch_task/features/details/presentation/views/widgets/genres_list.dart';
+import 'package:clean_arch_task/features/details/presentation/views/widgets/line.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
