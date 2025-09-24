@@ -126,74 +126,68 @@ class DetailsView extends StatelessWidget {
                   ),
                 ),
               ),
-
-              Positioned.fill(
-                top: 580, // adjust this so it sits under the text/logo
-                left: 0,
-                right: 0,
-                // todo
-                bottom: 100,
-                child: SingleChildScrollView(
-                  child: Padding(
-                    padding: const EdgeInsets.only(
-                      bottom: 120,
-                    ), // safety padding
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+              DraggableScrollableSheet(
+                initialChildSize: 0.35, // starts at 35% height
+                minChildSize: 0.25, // can shrink down
+                maxChildSize: 0.8, // can expand up
+                builder: (context, scrollController) {
+                  return Container(
+                    decoration: BoxDecoration(
+                      color: Colors.transparent,
+                      borderRadius: const BorderRadius.vertical(
+                        top: Radius.circular(20),
+                      ),
+                    ),
+                    child: ListView(
+                      controller: scrollController,
+                      padding: const EdgeInsets.all(16),
                       children: [
-                        SizedBox(height: 50),
-                        GenresList(),
-                        SizedBox(height: 29.79),
-
-                        Line(),
-                        SizedBox(height: 12),
-                        AnimeViewsInfo(),
-                        SizedBox(height: 12),
-                        Line(),
-                        SizedBox(height: 12),
-
-                        // Description text
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SizedBox(
-                                width: 29,
-                                height: 32,
-                                child: Image.asset(
-                                  'assets/images/anime_fire.png',
-                                  width: 29,
-                                  height: 32,
+                        const SizedBox(height: 20),
+                        const GenresList(),
+                        const SizedBox(height: 20),
+                        const Line(),
+                        const SizedBox(height: 12),
+                        const AnimeViewsInfo(),
+                        const SizedBox(height: 12),
+                        const Line(),
+                        const SizedBox(height: 12),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Image.asset(
+                              'assets/images/anime_fire.png',
+                              width: 29,
+                              height: 32,
+                            ),
+                            const SizedBox(width: 7),
+                            Container(
+                              width: 300,
+                              child: Text(
+                                textAlign: TextAlign.center,
+                                'Demon Slayer: Kimetsu no Yaiba follows Tanjiro,a kind-hearted boy who '
+                                'becomes a demon slayer after his family is slaughtered and his sister '
+                                'is turned into a demon. Experience breathtaking battles, stunning animation '
+                                'and an emotional journey of courage and hope.',
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 14,
+                                  height: 1.4,
+                                  fontFamily: 'Raleway',
+                                  fontWeight: FontWeight.w500,
                                 ),
+                                softWrap: true,
+                                overflow:
+                                    TextOverflow.visible, // 👈 ensures wrapping
                               ),
-                              SizedBox(width: 7),
-
-                              Expanded(
-                                // width: 307,
-                                child: Text(
-                                  // maxLines: 1,
-                                  // overflow: TextOverflow
-                                  //     .ellipsis, // ✅ show "..." if longer
-                                  'Demon Slayer: Kimetsu no Yaiba follows Tanjiro, a kind-hearted boy who becomes a demon slayer after his family is slaughtered and his sister is turned into a demon. Experience breathtaking battles, stunning animation, and an emotional journey of courage and hope.',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 14,
-                                    height: 1.4,
-                                    fontFamily: 'Raleway',
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                       ],
                     ),
-                  ),
-                ),
+                  );
+                },
               ),
-              // Bottom container wrapping both buttons
+
               Positioned(
                 bottom: -0.07,
                 left: 0,

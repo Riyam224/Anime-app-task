@@ -8,7 +8,6 @@ class AppColors {
   static const Color accent = Color(0xFFDFE4FF);
 
   static const Color accent2 = Color(0xFFD3D6FF);
-  
 
   static const Color cardTitle = Color(0xff18153F);
   static const Color cardGenre = Color(0xffA9A9A9);

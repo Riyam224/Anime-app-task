@@ -9,26 +9,23 @@ class AnimeViewsInfo extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 17),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          // const SizedBox(width: 20),
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly, // 👈 auto spacing
+        children: const [
           AnimeItemInfo(
             image: 'assets/images/eye_icon.png',
             theWidth: 3,
             animeViews: '2.3M views',
           ),
-          SizedBox(width: 48),
-          // const SizedBox(width: 20),
+          SizedBox(width: 40),
           AnimeItemInfo(
             image: 'assets/images/clapping_icon.png',
             theWidth: 3,
             animeViews: '2K clap',
           ),
-          SizedBox(width: 48),
-
+          SizedBox(width: 40),
           AnimeItemInfo(
             image: 'assets/images/season_icon.png',
-            theWidth: 4,
+            theWidth: 3,
             animeViews: '4 Seasons',
           ),
         ],
