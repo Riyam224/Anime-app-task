@@ -1,4 +1,3 @@
-
 # 🎬 Anime App Task — Clean Architecture Flutter Project
 
 An elegant anime-themed Flutter application showcasing **Clean Architecture**, **beautiful UI/UX**, and **modern Flutter practices**.  
