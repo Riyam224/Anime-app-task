@@ -1,11 +1,18 @@
 import 'package:clean_arch_task/core/theming/app_colors.dart';
 import 'package:clean_arch_task/core/theming/app_styles';
-import 'package:clean_arch_task/features/upgrade_plan/presentation/widgets/plan_card.dart';
+import 'package:clean_arch_task/features/upgrade_plan/presentation/views/widgets/plan_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class UpgradePlanView extends StatelessWidget {
+class UpgradePlanView extends StatefulWidget {
   const UpgradePlanView({super.key});
+
+  @override
+  State<UpgradePlanView> createState() => _UpgradePlanViewState();
+}
+
+class _UpgradePlanViewState extends State<UpgradePlanView> {
+  String selectedPlan = "Monthly"; // default selected
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +24,7 @@ class UpgradePlanView extends StatelessWidget {
               children: [
                 Container(
                   width: double.infinity,
-                  height: MediaQuery.of(context).size.height, // screen height
+                  height: MediaQuery.of(context).size.height,
                   decoration: const BoxDecoration(
                     gradient: LinearGradient(
                       begin: Alignment.topCenter,
@@ -41,21 +48,21 @@ class UpgradePlanView extends StatelessWidget {
                   top: 25,
                   child: Column(
                     children: [
-                      SizedBox(height: 67.5),
+                      const SizedBox(height: 67.5),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Padding(
-                            padding: const EdgeInsets.only(left: 100),
+                          const Padding(
+                            padding: EdgeInsets.only(left: 100),
                             child: Text(
                               'Upgrade Plan',
-                              style: AppTextStyles.ralewayBold24.copyWith(
+                              style: TextStyle(
                                 fontSize: 22,
+                                fontWeight: FontWeight.bold,
                                 color: Color(0xff18153F),
                               ),
                             ),
                           ),
-                          // SizedBox(width: 66),
                           Padding(
                             padding: const EdgeInsets.only(right: 32, left: 66),
                             child: Image.asset(
@@ -66,8 +73,7 @@ class UpgradePlanView extends StatelessWidget {
                           ),
                         ],
                       ),
-
-                      SizedBox(height: 9.5),
+                      const SizedBox(height: 9.5),
                       SizedBox(
                         width: 207,
                         height: 207,
@@ -106,47 +112,27 @@ class UpgradePlanView extends StatelessWidget {
                           fontWeight: FontWeight.w500,
                         ),
                       ),
-                      SizedBox(height: 36),
+                      const SizedBox(height: 36),
                       PlanCard(
-                        cardColor: AppColors.cardTitle,
                         planTitle: 'Monthly',
                         planSubsMoney: '\$5 USD ',
                         planSubsDuration: '/Month',
-                        planTitleColor: AppColors.white,
-                        planSubsMoneyColor: AppColors.white,
-                        checkIconPlan: Container(
-                          width: 25,
-                          height: 25,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: AppColors.primary,
-                          ),
-                          child: const Icon(
-                            Icons.check,
-                            size: 16,
-                            color: Colors.black,
-                          ),
-                        ),
+                        isSelected: selectedPlan == "Monthly",
+                        onTap: () {
+                          setState(() => selectedPlan = "Monthly");
+                        },
                       ),
-                      SizedBox(height: 16),
+                      const SizedBox(height: 16),
                       PlanCard(
-                        cardColor: AppColors.white,
                         planTitle: 'Annually',
                         planSubsMoney: '\$50 USD ',
                         planSubsDuration: '/Year',
-                        planTitleColor: AppColors.cardTitle,
-                        planSubsMoneyColor: AppColors.cardTitle,
-                        checkIconPlan: Container(
-                          width: 25,
-                          height: 25,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: AppColors.white,
-                            border: Border.all(color: AppColors.cardTitle),
-                          ),
-                        ),
+                        isSelected: selectedPlan == "Annually",
+                        onTap: () {
+                          setState(() => selectedPlan = "Annually");
+                        },
                       ),
-                      SizedBox(height: 34),
+                      const SizedBox(height: 34),
                       Container(
                         width: 343,
                         height: 46,
@@ -154,10 +140,10 @@ class UpgradePlanView extends StatelessWidget {
                           color: AppColors.primary,
                           borderRadius: BorderRadius.circular(30),
                         ),
-                        child: Center(
+                        child: const Center(
                           child: Text(
                             'Continue',
-                            style: AppTextStyles.ralewaySemiBold16.copyWith(
+                            style: TextStyle(
                               fontWeight: FontWeight.w700,
                               color: AppColors.white,
                             ),
