@@ -1,4 +1,4 @@
-import 'package:clean_arch_task/core/utils/styling/app_styles';
+import 'package:clean_arch_task/core/theming/app_styles';
 import 'package:flutter/material.dart';
 
 class CustomButtonWithIcon extends StatelessWidget {

@@ -1,6 +1,6 @@
 import 'dart:ui';
 import 'package:clean_arch_task/core/theming/app_colors.dart';
-import 'package:clean_arch_task/core/utils/styling/app_styles';
+import 'package:clean_arch_task/core/theming/app_styles';
 import 'package:clean_arch_task/core/widgets/custom_button_with_icon.dart';
 import 'package:clean_arch_task/features/details/presentation/views/widgets/anime_views_info.dart';
 import 'package:clean_arch_task/features/details/presentation/views/widgets/genres_list.dart';

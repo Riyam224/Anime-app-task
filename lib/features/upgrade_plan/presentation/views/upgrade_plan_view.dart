@@ -1,5 +1,5 @@
 import 'package:clean_arch_task/core/theming/app_colors.dart';
-import 'package:clean_arch_task/core/utils/styling/app_styles';
+import 'package:clean_arch_task/core/theming/app_styles';
 import 'package:clean_arch_task/features/upgrade_plan/presentation/widgets/plan_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
